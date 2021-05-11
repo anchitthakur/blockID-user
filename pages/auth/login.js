@@ -3,23 +3,27 @@ import Link from "next/link";
 import axios from 'axios'
 import Auth from "layouts/Auth.js";
 import {useRouter} from 'next/router';
-import {router} from "next/client";
+// import router from "next/client";
 
 
-const onSubmit = async () => {
-
-    const email = document.getElementById('email').value,
-        password = document.getElementById('password').value;
-
-    const response = await axios.post('http://localhost:3000/api/login', {email, password});
-    if (response.status === 200) {
-        await router.push('/user/userNext');
-    } else {
-        console.log(response);
-    }
-}
 
 export default function Login() {
+
+    const router = useRouter()
+
+    const onSubmit = async () => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        console.log(email,password,'fdf');
+        const response = await axios.post('/api/login', {email, password});
+        if (response.status === 200) {
+            router.push('/user/userNext');
+            console.log(response);
+        } else {
+            console.log(response);
+        }
+    }
+    
     return (
         <>
             <div className="container mx-auto px-4 h-full">
