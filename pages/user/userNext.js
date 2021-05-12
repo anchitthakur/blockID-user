@@ -5,7 +5,8 @@ import Userlayout from "../../layouts/Userlayout";
 var QRCode = require('qrcode.react');
 
 export default function userNext({user}) {
-    console.log(user);
+    var a  = user && user.adhaar["@ref"].id;
+    console.log(a);
     return (
         <>
             <div className="container mx-auto px-4 h-full">
@@ -13,7 +14,7 @@ export default function userNext({user}) {
                     <div className="w-full lg:w-4/12 px-4">
                         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">
                             <div className="flex-auto px-10 lg:px-10 py-10 mx-auto">
-                                {/* <QRCode value={user.id} size={300} fgColor="#1A202C" bgColor="#E2E8F0" /> */}
+                                <QRCode value={user?user.adhaar["@ref"].id:"NULL"} size={300} fgColor="#1A202C" bgColor="#E2E8F0" />
                             </div>
                         </div>
                         <div className="flex flex-wrap mt-6 relative">
