@@ -5,13 +5,15 @@ import { useRouter } from 'next/router';
 
 export default function otp() {
 
+    const router = useRouter()
+
     const [OTP, setOTP] = useState("")
 
     function verify(val){
-        router.push('/loader');
+        router.push('/user/loader');
     }
 
-    function updateOTP() {
+    function updateOTP(text) {
         setOTP(text);
         if (text.length == 4) {
             console.log("OTP Entered: " + text)
@@ -29,7 +31,7 @@ export default function otp() {
                                 <div className="text-3xl font-bold block uppercase tracking-wide text-gray-700 text-center">
                                     <h1>Enter Your OTP</h1>
                                 </div>
-                                <div className="hcenter" style={{ height: "40vh", fontSize: "40px", width: "100%" }}>
+                                <div className="hcenter" style={{ height: "40vh", fontSize: "40px", width: "100%" , color:"black" }}>
                                     <OtpInput
                                         value={OTP}
                                         onChange={updateOTP}

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-// components
 
 export default function Navbar(props) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -40,7 +39,7 @@ export default function Navbar(props) {
                                             "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                                         }
                                     >
-                                        userNext
+                                        QR Code
           </a>
                                 </Link>
                             </li>
@@ -57,14 +56,14 @@ export default function Navbar(props) {
                                 </Link>
                             </li>
                             <li className="flex items-center">
-                                <Link href="/auth/">
+                                <Link href="/user/setting">
                                     <a
                                         href="#pablo"
                                         className={
                                             "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                                         }
                                     >
-                                        MyId
+                                        Setting
           </a>
                                 </Link>
                             </li>

@@ -1,7 +1,17 @@
 import React from 'react'
 import Userlayout from "../../layouts/Userlayout";
+import { useRouter } from 'next/router';
 
 export default function upload() {
+
+    const router = useRouter()
+
+    const onSubmit = async () => {
+   
+            router.push('/otp');
+            
+    }
+
     return (
         <div className="container mx-auto px-4 h-full">
             <div className="flex content-center items-center justify-center h-full">
@@ -38,6 +48,15 @@ export default function upload() {
                                         className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                                         id="fileUpload"
                                     />
+                                </div>
+                                <div className="text-center mt-6">
+                                    <button
+                                        className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={onSubmit}
+                                    >
+                                        Next
+                                        </button>
                                 </div>
                             </form>
                         </div>

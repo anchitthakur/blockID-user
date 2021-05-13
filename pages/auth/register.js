@@ -18,7 +18,7 @@ export default function Register() {
 
       const response = await axios.post('/api/login', { email, password });
       if (response.status === 200) {
-          await router.push('/user/userNext');
+          await router.push('/user/upload');
       } else {
           console.log(response);
       }
@@ -32,7 +32,7 @@ export default function Register() {
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">
               <div className="flex-auto px-4 lg:px-10 py-10">
                 <form>
-                  <div className="relative w-full mb-3">
+                  {/* <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-gray-700 text-xs font-bold mb-2"
                       htmlFor="grid-password"
@@ -58,7 +58,7 @@ export default function Register() {
                       className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                       placeholder="Name"
                     />
-                  </div>
+                  </div> */}
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -70,6 +70,7 @@ export default function Register() {
                       type="email"
                       className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      id="email"
                     />
                   </div>
                   <div className="relative w-full mb-3">
@@ -83,6 +84,7 @@ export default function Register() {
                       type="password"
                       className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                       placeholder="Password"
+                      id="password"
                     />
                   </div>
 
@@ -110,6 +112,7 @@ export default function Register() {
                     <button
                       className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="button"
+                      onClick={onSubmit}
                     >
                       Create Account
                     </button>
